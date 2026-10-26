@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Immercing · Servicios digitales para negocios</title>
+<meta name="description" content="Ayudamos a negocios de Veracruz a aparecer en Google, responder WhatsApp a tiempo y tener una página web que sí les traiga clientes.">
+<meta property="og:title" content="Immercing · Servicios digitales para negocios">
+<meta property="og:description" content="Diagnóstico, páginas web, WhatsApp automatizado y redes sociales para negocios que se están quedando atrás en lo digital.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0F4C4F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230F4C4F'/%3E%3Cpath d='M2 17h28a14 14 0 0 1-28 0z' fill='%23F2C230'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --niebla:#EEF2EF;
+    --papel:#FFFFFF;
+    --tinta:#10232A;
+    --tinta-suave:#4A5D62;
+    --profundo:#0F4C4F;
+    --profundo-2:#0B3A3C;
+    --pina:#F2C230;
+    --linea:#C9D3CF;
+    --radio-s:6px;
+    --radio-l:20px;
+    --ancho:1160px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--niebla);color:var(--tinta);
+    font-family:"Schibsted Grotesk",system-ui,sans-serif;
+    font-size:1.0625rem;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--pina);outline-offset:3px;border-radius:4px}
+  .envoltura{max-width:var(--ancho);margin:0 auto;padding:0 24px}
+
+  /* Encabezado */
+  .encabezado{position:sticky;top:0;z-index:10;background:rgba(238,242,239,.9);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+  .encabezado.con-borde{border-color:var(--linea)}
+  .encabezado .envoltura{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .marca{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:1.35rem;letter-spacing:-.03em}
+  .marca svg{width:28px;height:28px}
+  .nav{display:flex;align-items:center;gap:28px}
+  .nav a{text-decoration:none;color:var(--tinta-suave);font-weight:500;font-size:.98rem}
+  .nav a:hover{color:var(--tinta)}
+  .boton{
+    display:inline-flex;align-items:center;gap:10px;justify-content:center;
+    font:inherit;font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer;
+    border:0;border-radius:999px;padding:13px 22px;transition:transform .15s,background .15s;
+  }
+  .boton svg{width:20px;height:20px;flex:none}
+  .boton-oscuro{background:var(--tinta);color:var(--papel)}
+  .boton-oscuro:hover{background:var(--profundo)}
+  .boton-pina{background:var(--pina);color:var(--tinta)}
+  .boton-pina:hover{background:#FFD24A}
+  .boton:active{transform:scale(.98)}
+  .nav .boton{padding:10px 18px;font-size:.95rem;color:var(--papel)}
+
+  /* Hero */
+  .hero{padding:72px 0 96px}
+  .hero .envoltura{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+  .hero h1{
+    font-size:clamp(2.5rem,5.4vw,4.4rem);line-height:1.02;letter-spacing:-.045em;
+    font-weight:800;margin:0 0 28px;max-width:13ch;
+  }
+  .hero .entrada{font-size:1.2rem;color:var(--tinta-suave);max-width:46ch;margin:0 0 36px}
+  .hero .acciones{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .enlace-sutil{font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;text-decoration-color:var(--pina)}
+
+  /* Revisión interactiva */
+  .revision{
+    background:var(--profundo);color:var(--papel);border-radius:var(--radio-l);
+    padding:32px;display:grid;grid-template-columns:1fr 76px;gap:28px;
+    box-shadow:0 30px 60px -30px rgba(15,76,79,.55);
+  }
+  .revision h2{font-size:1.45rem;letter-spacing:-.02em;line-height:1.2;margin:0 0 6px}
+  .revision .ayuda{margin:0 0 22px;color:#B9D3D0;font-size:.95rem}
+  .pregunta{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid rgba(255,255,255,.14)}
+  .pregunta p{margin:0;font-size:.97rem;line-height:1.4}
+  .opciones{display:flex;gap:6px;flex:none}
+  .opciones button{
+    font:inherit;font-weight:700;font-size:.88rem;cursor:pointer;
+    background:transparent;color:#DCEAE8;border:1.5px solid rgba(255,255,255,.28);
+    border-radius:999px;padding:6px 14px;min-width:52px;transition:background .15s,color .15s,border-color .15s;
+  }
+  .opciones button:hover{border-color:var(--papel)}
+  .opciones button[aria-pressed="true"].si{background:var(--pina);border-color:var(--pina);color:var(--tinta)}
+  .opciones button[aria-pressed="true"].no{background:var(--papel);border-color:var(--papel);color:var(--profundo)}
+
+  .nivel{display:flex;flex-direction:column;align-items:center;gap:10px}
+  .tanque{
+    position:relative;width:64px;flex:1;min-height:240px;border-radius:32px;
+    border:2px solid rgba(255,255,255,.35);overflow:hidden;background:var(--profundo-2);
+  }
+  .agua{
+    position:absolute;left:0;right:0;bottom:0;height:0%;background:var(--pina);
+    transition:height .6s cubic-bezier(.3,1.3,.5,1);
+  }
+  .agua::before{
+    content:"";position:absolute;left:-50%;top:-8px;width:200%;height:16px;
+    background:radial-gradient(circle at 25% 100%,transparent 8px,var(--pina) 9px) 0 0/32px 16px repeat-x;
+    animation:ola 3s linear infinite;
+  }
+  @keyframes ola{to{transform:translateX(32px)}}
+  .puntaje{font-weight:800;font-size:1.6rem;font-variant-numeric:tabular-nums;line-height:1}
+  .puntaje small{font-size:.85rem;font-weight:500;color:#B9D3D0}
+  .resultado{grid-column:1 / -1;border-top:1px solid rgba(255,255,255,.14);padding-top:20px}
+  .resultado p{margin:0 0 16px;font-size:1rem}
+  .resultado strong{color:var(--pina)}
+  .resultado .boton{width:100%}
+
+  /* Secciones */
+  section{scroll-margin-top:80px}
+  .bloque{padding:96px 0}
+  .bloque-claro{background:var(--papel)}
+  .titulo-seccion{font-size:clamp(2rem,3.6vw,2.9rem);letter-spacing:-.035em;line-height:1.08;font-weight:800;margin:0 0 18px;max-width:20ch}
+  .bajada{color:var(--tinta-suave);font-size:1.15rem;max-width:56ch;margin:0 0 56px}
+
+  /* Servicios como filas problema → solución */
+  .servicio{
+    display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr) minmax(0,1fr);gap:40px;
+    padding:36px 0;border-top:1px solid var(--linea);align-items:start;
+  }
+  .servicio:last-child{border-bottom:1px solid var(--linea)}
+  .servicio h3{font-size:1.5rem;letter-spacing:-.025em;line-height:1.15;margin:0}
+  .queja{font-size:1.2rem;font-weight:600;line-height:1.35;margin:0;color:var(--profundo)}
+  .queja::before{content:"“";color:var(--pina);font-weight:800;margin-right:2px}
+  .queja::after{content:"”";color:var(--pina);font-weight:800;margin-left:2px}
+  .servicio .detalle{margin:0;color:var(--tinta-suave)}
+  .servicio ul{margin:12px 0 0;padding:0;list-style:none}
+  .servicio li{padding-left:22px;position:relative;margin:6px 0;color:var(--tinta)}
+  .servicio li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--pina)}
+
+  /* Proceso */
+  .pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:paso;position:relative}
+  .paso{padding:0 28px 0 0;position:relative}
+  .paso .num{
+    display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;
+    background:var(--profundo);color:var(--papel);font-weight:800;font-size:1.15rem;margin-bottom:22px;position:relative;z-index:1;
+  }
+  .paso:first-child .num{background:var(--pina);color:var(--tinta)}
+  .paso:not(:last-child)::after{content:"";position:absolute;top:24px;left:48px;right:0;height:2px;background:var(--linea)}
+  .paso h3{font-size:1.2rem;letter-spacing:-.02em;margin:0 0 8px}
+  .paso p{margin:0;color:var(--tinta-suave);font-size:1rem}
+
+  /* Para quién */
+  .giros{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+  .giros li{border:1.5px solid var(--linea);background:var(--papel);border-radius:999px;padding:10px 18px;font-weight:600}
+  .para-quien{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .para-quien p{color:var(--tinta-suave);font-size:1.15rem;margin:0;max-width:48ch}
+
+  /* Contacto */
+  .contacto{background:var(--tinta);color:var(--papel);padding:104px 0 56px}
+  .contacto .rejilla{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:end}
+  .contacto h2{font-size:clamp(2.3rem,4.6vw,3.8rem);line-height:1.02;letter-spacing:-.045em;font-weight:800;margin:0 0 22px;max-width:15ch}
+  .contacto .bajada{color:#AFC0C2;margin-bottom:36px}
+  .medios{display:flex;flex-direction:column;gap:18px}
+  .medio{display:block;text-decoration:none;padding:20px 0;border-top:1px solid rgba(255,255,255,.16)}
+  .medio span{display:block;color:#AFC0C2;font-size:.92rem}
+  .medio b{font-size:1.25rem;font-weight:700;word-break:break-all}
+  .medio:hover b{color:var(--pina)}
+  .pie{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:88px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16);color:#8FA3A6;font-size:.92rem}
+
+  /* Entrada de la página: un solo momento */
+  @media (prefers-reduced-motion:no-preference){
+    .hero h1,.hero .entrada,.hero .acciones{animation:subir .7s cubic-bezier(.2,.8,.2,1) both}
+    .hero .entrada{animation-delay:.08s}
+    .hero .acciones{animation-delay:.16s}
+    .revision{animation:subir .8s .22s cubic-bezier(.2,.8,.2,1) both}
+    @keyframes subir{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .agua{transition:none}
+    .agua::before{animation:none}
+  }
+
+  /* Responsivo */
+  @media (max-width:980px){
+    .hero .envoltura,.para-quien,.contacto .rejilla{grid-template-columns:1fr;gap:48px}
+    .servicio{grid-template-columns:1fr;gap:14px}
+    .pasos{grid-template-columns:1fr 1fr;row-gap:44px}
+    .paso:nth-child(2)::after{display:none}
+  }
+  @media (max-width:720px){
+    .nav a:not(.boton){display:none}
+    .hero{padding:40px 0 72px}
+    .bloque{padding:72px 0}
+    .revision{padding:24px 20px;grid-template-columns:1fr 52px;gap:18px}
+    .tanque{width:46px;min-height:200px}
+    .pregunta{flex-direction:column;align-items:flex-start;gap:10px}
+    .pasos{grid-template-columns:1fr}
+    .paso{padding:0}
+    .paso::after{display:none}
+    .envoltura{padding:0 16px}
+  }
+</style>
+</head>
+<body>
+
+<header class="encabezado" id="encabezado">
+  <div class="envoltura">
+    <a class="marca" href="#inicio" aria-label="Immercing, inicio">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#0F4C4F"/><path d="M2 17h28a14 14 0 0 1-28 0z" fill="#F2C230"/></svg>
+      immercing
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#contacto">Contacto</a>
+      <a class="boton boton-oscuro js-whatsapp" href="#" data-mensaje="Hola, vi su página y me gustaría saber más sobre sus servicios.">Escríbenos</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="envoltura">
+      <div>
+        <h1>Tu negocio funciona. Que también se note en internet.</h1>
+        <p class="entrada">Ayudamos a negocios de la región a aparecer en Google, contestar WhatsApp a tiempo y tener una página que les traiga clientes. Sin tecnicismos y con precios claros desde el principio.</p>
+        <div class="acciones">
+          <a class="boton boton-oscuro js-whatsapp" href="#" data-mensaje="Hola, me interesa el diagnóstico gratuito para mi negocio.">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg>
+            Pide tu diagnóstico gratis
+          </a>
+          <a class="enlace-sutil" href="#servicios">Ver qué hacemos</a>
+        </div>
+      </div>
+
+      <aside class="revision" aria-labelledby="titulo-revision">
+        <div>
+          <h2 id="titulo-revision">¿Qué tan al día está tu negocio?</h2>
+          <p class="ayuda">Contesta cinco preguntas. Tarda menos de un minuto.</p>
+          <div id="preguntas"></div>
+        </div>
+        <div class="nivel" aria-hidden="true">
+          <div class="tanque"><div class="agua" id="agua"></div></div>
+          <div class="puntaje"><span id="puntaje">0</span><small>/5</small></div>
+        </div>
+        <div class="resultado">
+          <p id="mensaje-resultado" aria-live="polite">Cada “sí” llena el nivel. Al final te decimos por dónde empezar.</p>
+          <a class="boton boton-pina" id="enviar-resultado" href="#">Enviar mi resultado por WhatsApp</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="bloque bloque-claro" id="servicios">
+    <div class="envoltura">
+      <h2 class="titulo-seccion">Lo que hacemos por tu negocio</h2>
+      <p class="bajada">Empezamos por lo que más impacto tiene y menos cuesta. Nada de proyectos eternos ni sistemas que nadie usa.</p>
+
+      <article class="servicio">
+        <h3>Diagnóstico digital</h3>
+        <p class="queja">Sé que debería hacer algo en internet, pero no sé por dónde empezar.</p>
+        <div>
+          <p class="detalle">Revisamos cómo te encuentran hoy tus clientes y dónde estás perdiendo ventas.</p>
+          <ul>
+            <li>Revisión de Google, redes y página web</li>
+            <li>Comparación con tu competencia cercana</li>
+            <li>Plan de acción por prioridad y costo</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="servicio">
+        <h3>Páginas web</h3>
+        <p class="queja">Me buscan en internet y no encuentran nada, o encuentran algo viejo.</p>
+        <div>
+          <p class="detalle">Hacemos o renovamos tu página para que se vea bien en el celular y lleve al cliente a contactarte.</p>
+          <ul>
+            <li>Diseño moderno y rápido</li>
+            <li>Botón directo a WhatsApp</li>
+            <li>Alta en Google Maps</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="servicio">
+        <h3>WhatsApp automatizado</h3>
+        <p class="queja">Me escriben cuando estoy ocupado y para cuando contesto ya compraron en otro lado.</p>
+        <div>
+          <p class="detalle">Un asistente que responde al momento, da precios y horarios, toma pedidos y te pasa los casos importantes.</p>
+          <ul>
+            <li>Respuestas las 24 horas</li>
+            <li>Catálogo, citas y pedidos</li>
+            <li>Tú decides cuándo intervenir</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="servicio">
+        <h3>Redes sociales</h3>
+        <p class="queja">Tengo Facebook, pero lo actualizo cuando me acuerdo.</p>
+        <div>
+          <p class="detalle">Ordenamos tus perfiles y te dejamos un plan de publicaciones que sí puedas mantener.</p>
+          <ul>
+            <li>Perfiles completos y profesionales</li>
+            <li>Calendario de contenido mensual</li>
+            <li>Ideas y textos listos para publicar</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="bloque" id="proceso">
+    <div class="envoltura">
+      <h2 class="titulo-seccion">Cómo trabajamos</h2>
+      <p class="bajada">Antes de cobrarte un peso, sabes qué vamos a hacer, cuánto cuesta y cuándo queda.</p>
+      <ol class="pasos" style="list-style:none;margin:0;padding:0">
+        <li class="paso">
+          <div class="num">1</div>
+          <h3>Platicamos</h3>
+          <p>Nos cuentas de tu negocio y hacemos el diagnóstico sin costo.</p>
+        </li>
+        <li class="paso">
+          <div class="num">2</div>
+          <h3>Te proponemos</h3>
+          <p>Recibes un plan con prioridades, precio fijo y tiempos de entrega.</p>
+        </li>
+        <li class="paso">
+          <div class="num">3</div>
+          <h3>Lo construimos</h3>
+          <p>Implementamos en semanas, no meses, y te enseñamos a usarlo.</p>
+        </li>
+        <li class="paso">
+          <div class="num">4</div>
+          <h3>Te acompañamos</h3>
+          <p>Revisamos resultados contigo y ajustamos lo que haga falta.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="bloque bloque-claro">
+    <div class="envoltura para-quien">
+      <div>
+        <h2 class="titulo-seccion">Para negocios que ya tienen clientes y quieren más</h2>
+        <p>No importa el giro ni el tamaño. Si tu negocio depende de que la gente te encuentre y te contacte, podemos ayudarte.</p>
+      </div>
+      <ul class="giros">
+        <li>Restaurantes y cocinas</li>
+        <li>Panaderías</li>
+        <li>Tiendas y abarrotes</li>
+        <li>Talleres</li>
+        <li>Consultorios</li>
+        <li>Hoteles y turismo</li>
+        <li>Manufactura e industria</li>
+        <li>Servicios profesionales</li>
+        <li>Productores del campo</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="contacto" id="contacto">
+  <div class="envoltura">
+    <div class="rejilla">
+      <div>
+        <h2>Cuéntanos de tu negocio. El diagnóstico va por nuestra cuenta.</h2>
+        <p class="bajada">Te respondemos el mismo día por WhatsApp o correo.</p>
+        <a class="boton boton-pina js-whatsapp" href="#" data-mensaje="Hola, me interesa el diagnóstico gratuito para mi negocio.">Escribir por WhatsApp</a>
+      </div>
+      <div class="medios">
+        <a class="medio js-whatsapp" href="#" data-mensaje="Hola, vi su página y me gustaría saber más sobre sus servicios.">
+          <span>WhatsApp</span><b>283 115 9341</b>
+        </a>
+        <a class="medio" href="mailto:moralesmonterok@gmail.com?subject=Informes%20Immercing">
+          <span>Correo</span><b>moralesmonterok@gmail.com</b>
+        </a>
+        <div class="medio">
+          <span>Ubicación</span><b>Veracruz, México</b>
+        </div>
+      </div>
+    </div>
+    <div class="pie">
+      <span>© <span id="anio">2026</span> Immercing</span>
+      <span>Servicios digitales para negocios</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const NUMERO = "522831159341";
+  const wa = (texto) => "https://wa.me/" + NUMERO + "?text=" + encodeURIComponent(texto);
+
+  document.querySelectorAll(".js-whatsapp").forEach((el) => {
+    el.href = wa(el.dataset.mensaje);
+    el.target = "_blank";
+    el.rel = "noopener";
+  });
+
+  const preguntas = [
+    { texto: "¿Apareces en Google Maps con horario y fotos al día?", falta: "aparecer bien en Google Maps" },
+    { texto: "¿Tienes una página web que se vea bien en el celular?", falta: "una página web" },
+    { texto: "¿Contestas WhatsApp aunque estés ocupado o cerrado?", falta: "responder WhatsApp a tiempo" },
+    { texto: "¿Publicas en redes sociales al menos cada semana?", falta: "redes sociales constantes" },
+    { texto: "¿Sabes de dónde llegan tus clientes nuevos?", falta: "saber de dónde llegan mis clientes" }
+  ];
+  const respuestas = new Array(preguntas.length).fill(null);
+  const contenedor = document.getElementById("preguntas");
+
+  preguntas.forEach((p, i) => {
+    const fila = document.createElement("div");
+    fila.className = "pregunta";
+    fila.innerHTML =
+      '<p id="p' + i + '">' + p.texto + '</p>' +
+      '<div class="opciones" role="group" aria-labelledby="p' + i + '">' +
+      '<button type="button" class="si" aria-pressed="false">Sí</button>' +
+      '<button type="button" class="no" aria-pressed="false">No</button></div>';
+    const [si, no] = fila.querySelectorAll("button");
+    si.addEventListener("click", () => responder(i, true, si, no));
+    no.addEventListener("click", () => responder(i, false, si, no));
+    contenedor.appendChild(fila);
+  });
+
+  function responder(i, valor, si, no) {
+    respuestas[i] = valor;
+    si.setAttribute("aria-pressed", String(valor === true));
+    no.setAttribute("aria-pressed", String(valor === false));
+    actualizar();
+  }
+
+  function actualizar() {
+    const puntos = respuestas.filter((r) => r === true).length;
+    const contestadas = respuestas.filter((r) => r !== null).length;
+    document.getElementById("puntaje").textContent = puntos;
+    document.getElementById("agua").style.height = (puntos / preguntas.length) * 100 + "%";
+
+    const msg = document.getElementById("mensaje-resultado");
+    if (contestadas < preguntas.length) {
+      msg.textContent = "Llevas " + contestadas + " de " + preguntas.length + ". Cada “sí” llena el nivel.";
+    } else if (puntos <= 1) {
+      msg.innerHTML = "Hay mucho por ganar. <strong>Con dos o tres cambios básicos</strong> ya se notaría la diferencia en clientes.";
+    } else if (puntos <= 3) {
+      msg.innerHTML = "Vas a medias. <strong>Lo que te falta es justo lo que más clientes trae</strong>, y suele ser lo más rápido de resolver.";
+    } else {
+      msg.innerHTML = "Vas muy bien. <strong>Toca automatizar y medir</strong> para que todo eso te cueste menos tiempo.";
+    }
+
+    const faltan = preguntas.filter((_, i) => respuestas[i] === false).map((p) => p.falta);
+    let texto = "Hola, hice la revisión en su página y obtuve " + puntos + " de " + preguntas.length + ".";
+    if (faltan.length) texto += " Me falta: " + faltan.join(", ") + ".";
+    texto += " Me interesa el diagnóstico gratuito.";
+    const boton = document.getElementById("enviar-resultado");
+    boton.href = wa(texto);
+  }
+
+  const enviar = document.getElementById("enviar-resultado");
+  enviar.target = "_blank";
+  enviar.rel = "noopener";
+  actualizar();
+
+  document.getElementById("anio").textContent = new Date().getFullYear();
+  const enc = document.getElementById("encabezado");
+  window.addEventListener("scroll", () => enc.classList.toggle("con-borde", window.scrollY > 8), { passive: true });
+</script>
+</body>
+</html>
